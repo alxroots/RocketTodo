@@ -1,0 +1,20 @@
+.header-background {
+  background-color: var(--color-black);
+  height: 200px;
+}
+
+.title-wrapper {
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: var(--color-blue);
+  font-family: 'Inter', sans-serif;
+  span {
+    color: var(--color-purple-dark);
+  }
+}
