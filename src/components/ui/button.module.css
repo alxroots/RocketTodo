@@ -1,0 +1,19 @@
+.custom-button {
+  all: unset;
+  width: 90px;
+  padding: 1rem;
+  background-color: var(--color-blue-dark);
+  color: var(--color-gray-100);
+  font-weight: bold;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-button:hover {
+  background-color: var(--color-blue);
+}

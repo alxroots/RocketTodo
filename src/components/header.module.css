@@ -18,3 +18,16 @@
     color: var(--color-purple-dark);
   }
 }
+
+.action-wrapper {
+  display: flex;
+  width: 46rem;
+  margin: -27px auto;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .action-wrapper {
+    width: 80%;
+  }
+}
