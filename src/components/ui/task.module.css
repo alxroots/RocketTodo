@@ -1,5 +1,6 @@
 .task {
   display: flex;
+  justify-content: space-between;
   background: var(--color-gray-500);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
@@ -8,6 +9,12 @@
   padding: var(--spacing-4);
   gap: var(--spacing-3);
   color: var(--color-gray-100);
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
 
   input[type="checkbox"] {
     appearance: none;

@@ -2,8 +2,28 @@ import logo from "../assets/rocket.svg";
 import styles from "./header.module.css";
 import { Input } from "./ui/input.tsx";
 import { Button } from "./ui/button.tsx";
+import { TaskPropTypes } from "./content.tsx";
+import { ChangeEvent, useState } from "react";
 
-export function Header() {
+interface HeaderProps {
+  tasks?: TaskPropTypes[];
+  setTasks(tasks: TaskPropTypes[]): void;
+}
+
+export function Header({ tasks = [], setTasks }: HeaderProps) {
+  const [newTask, setNewTask] = useState<TaskPropTypes | undefined>(undefined);
+
+  const handleCreateTask = () => {
+    if (newTask) {
+      setTasks([...tasks, newTask]);
+      setNewTask({ description: "", checked: false });
+    }
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setNewTask({ description: event.target.value, checked: false });
+  };
+
   return (
     <header className={styles["header-background"]}>
       <div className={styles["title-wrapper"]}>
@@ -15,8 +35,8 @@ export function Header() {
         </h1>
       </div>
       <div className={styles["action-wrapper"]}>
-        <Input />
-        <Button hasIcon buttonType="create" iconPosition="right">
+        <Input onChange={handleInputChange} value={newTask?.description} />
+        <Button hasIcon iconPosition="right" onClick={handleCreateTask}>
           Criar
         </Button>
       </div>

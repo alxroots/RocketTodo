@@ -3,23 +3,39 @@ import { Display } from "./ui/display.tsx";
 import { EmptyTaskList } from "./ui/empty.tsx";
 import { Task } from "./ui/task.tsx";
 
-export function Content() {
+export type TaskPropTypes = {
+  description: string;
+  checked: boolean;
+};
+
+interface ContentProps {
+  tasks?: TaskPropTypes[];
+}
+
+export function Content({ tasks }: ContentProps) {
   return (
     <main className={styles["content-wrapper"]}>
       <div className={styles["display-container"]}>
         <Display
           title="Tarefas criadas"
-          value={0}
+          value={tasks?.length || 0}
           style={{ color: "#4ea8de" }}
         />
         <Display title="Concluídas" value={0} style={{ color: "#8a84fa" }} />
       </div>
-      <EmptyTaskList />
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-        <Task description="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
-        <Task description="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
-        <Task description="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
-      </div>
+      {tasks && tasks.length > 0 ? (
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {tasks.map((task, index) => (
+            <Task
+              key={index}
+              description={task.description}
+              checked={task.checked}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyTaskList />
+      )}
     </main>
   );
 }
