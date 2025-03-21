@@ -1,0 +1,19 @@
+.display-wrapper {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;;
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.display-value {
+  padding: var(--spacing-05) var(--spacing-2);
+  background-color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-200);
+  border-radius: var(--border-radius-inf);
+}

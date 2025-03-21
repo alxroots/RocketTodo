@@ -1,0 +1,13 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 46rem;
+  margin: 0 auto;
+  padding-top: 5.75rem;
+}
+
+.display-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
