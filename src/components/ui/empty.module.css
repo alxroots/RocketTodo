@@ -17,4 +17,17 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-md);
   color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+  .empty-task-wrapper {
+    span {
+      font-size: var(--font-size-xs);
+    }
+  }
 }

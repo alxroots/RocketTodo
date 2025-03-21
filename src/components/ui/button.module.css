@@ -5,8 +5,12 @@
   background-color: var(--color-blue-dark);
   color: var(--color-gray-100);
   font-weight: bold;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+
   border-radius: var(--border-radius-md);
   cursor: pointer;
+  touch-action: manipulation;
 
   display: flex;
   justify-content: center;
@@ -30,4 +34,10 @@
   cursor: pointer;
   background-color: var(--color-gray-400);
   color: var(--color-danger)
+}
+
+@media (max-width: 768px) {
+  .custom-button {
+    font-size: var(--font-size-2xs);
+  }
 }
