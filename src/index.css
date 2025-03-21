@@ -37,6 +37,7 @@
   --spacing-4: 1rem;        /* 16px */
   --spacing-6: 1.5rem;      /* 24px */
   --spacing-8: 2rem;        /* 32px */
+  --spacing-16: 4rem;       /* 64px */
 
   --border-radius-sm: 0.25rem;   /* 4px */
   --border-radius-md: 0.5rem;    /* 8px */

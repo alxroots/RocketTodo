@@ -1,5 +1,6 @@
 import styles from "./content.module.css";
 import { Display } from "./ui/display.tsx";
+import { EmptyTaskList } from "./ui/empty.tsx";
 
 export function Content() {
   return (
@@ -12,6 +13,7 @@ export function Content() {
         />
         <Display title="Concluídas" value={0} style={{ color: "#8a84fa" }} />
       </div>
+      <EmptyTaskList />
     </main>
   );
 }

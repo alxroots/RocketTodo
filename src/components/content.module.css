@@ -6,8 +6,15 @@
   padding-top: 5.75rem;
 }
 
+@media (max-width: 768px) {
+  .content-wrapper {
+    width: 80%;
+  }
+}
+
 .display-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: var(--spacing-6);
 }

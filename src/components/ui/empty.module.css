@@ -1,0 +1,20 @@
+.empty-task-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--spacing-16);
+  border-radius: var(--border-radius-md);
+  border-top: 1px solid var(--color-gray-400);
+  span {
+    color: var(--color-gray-300);
+    font-weight: var(--font-weight-regular);
+  }
+}
+
+.title {
+  margin-top: var(--spacing-4);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-300);
+}
