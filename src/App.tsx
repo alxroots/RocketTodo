@@ -14,10 +14,16 @@ function App() {
     );
   };
 
+  const deleteTask = (taskId: string) => {
+    setTasks((originalTasks) =>
+      originalTasks?.filter((task) => task.id !== taskId),
+    );
+  };
+
   return (
     <>
       <Header tasks={tasks} setTasks={setTasks} />
-      <Content tasks={tasks} updateTask={updateTask} />
+      <Content tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
     </>
   );
 }

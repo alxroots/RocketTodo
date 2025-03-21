@@ -7,12 +7,25 @@ interface TaskProps {
   description: string;
   checked: boolean;
   updateTask?(taskId: string, updatedProps: Partial<TaskPropTypes>): void;
+  deleteTask?(taskId: string): void;
 }
 
-export function Task({ id, description, checked, updateTask }: TaskProps) {
+export function Task({
+  id,
+  description,
+  checked,
+  updateTask,
+  deleteTask,
+}: TaskProps) {
   const handleChangeCheck = () => {
     if (updateTask) {
       updateTask(id, { checked: !checked });
+    }
+  };
+
+  const handleDeleteTask = () => {
+    if (deleteTask) {
+      deleteTask(id);
     }
   };
   return (
@@ -21,7 +34,7 @@ export function Task({ id, description, checked, updateTask }: TaskProps) {
         <input type="checkbox" checked={checked} onChange={handleChangeCheck} />
         <p className={checked ? styles["task-deleted"] : ""}>{description}</p>
       </div>
-      <IconButton />
+      <IconButton onClick={handleDeleteTask} />
     </div>
   );
 }

@@ -7,9 +7,10 @@ import { TaskPropTypes } from "../types.ts";
 interface ContentProps {
   tasks?: TaskPropTypes[];
   updateTask?(taskId: string, updatedProps: Partial<TaskPropTypes>): void;
+  deleteTask?(taskId: string): void;
 }
 
-export function Content({ tasks, updateTask }: ContentProps) {
+export function Content({ tasks, updateTask, deleteTask }: ContentProps) {
   const tasksDone = tasks?.filter((task) => task.checked);
   return (
     <main className={styles["content-wrapper"]}>
@@ -38,6 +39,7 @@ export function Content({ tasks, updateTask }: ContentProps) {
               description={task.description}
               checked={task.checked}
               updateTask={updateTask}
+              deleteTask={deleteTask}
             />
           ))}
         </div>
