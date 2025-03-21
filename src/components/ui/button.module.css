@@ -17,3 +17,16 @@
 .custom-button:hover {
   background-color: var(--color-blue);
 }
+
+.icon-button {
+  all: unset;
+  background-color: transparent;
+  padding: var(--spacing-2);
+  border-radius: var(--border-radius-sm);
+}
+
+.icon-button:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-400);
+  color: var(--color-danger)
+}

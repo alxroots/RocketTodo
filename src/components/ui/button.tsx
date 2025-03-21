@@ -5,22 +5,29 @@ import styles from "./button.module.css";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hasIcon?: boolean;
   iconPosition?: "left" | "right";
-  buttonType?: "delete" | "create";
 }
 
 export function Button({
   hasIcon,
-  buttonType,
   iconPosition,
   children,
   ...rest
 }: ButtonProps) {
-  const Icon = buttonType === "delete" ? Trash : PlusCircle;
   return (
     <button {...rest} className={styles["custom-button"]}>
-      {hasIcon && iconPosition === "left" && <Icon size={16} />}
+      {hasIcon && iconPosition === "left" && <PlusCircle size={16} />}
       {children}
-      {hasIcon && iconPosition === "right" && <Icon size={16} />}
+      {hasIcon && iconPosition === "right" && <PlusCircle size={16} />}
+    </button>
+  );
+}
+
+type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function IconButton({ ...rest }: IconButtonProps) {
+  return (
+    <button {...rest} className={styles["icon-button"]}>
+      <Trash size={16} />
     </button>
   );
 }
