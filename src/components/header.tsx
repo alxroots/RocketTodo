@@ -2,8 +2,8 @@ import logo from "../assets/rocket.svg";
 import styles from "./header.module.css";
 import { Input } from "./ui/input.tsx";
 import { Button } from "./ui/button.tsx";
-import { TaskPropTypes } from "./content.tsx";
 import { ChangeEvent, useState } from "react";
+import { TaskPropTypes } from "../types.ts";
 
 interface HeaderProps {
   tasks?: TaskPropTypes[];
@@ -16,12 +16,16 @@ export function Header({ tasks = [], setTasks }: HeaderProps) {
   const handleCreateTask = () => {
     if (newTask) {
       setTasks([...tasks, newTask]);
-      setNewTask({ description: "", checked: false });
+      setNewTask({ id: "", description: "", checked: false });
     }
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNewTask({ description: event.target.value, checked: false });
+    setNewTask({
+      id: crypto.randomUUID(),
+      description: event.target.value,
+      checked: false,
+    });
   };
 
   return (

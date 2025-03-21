@@ -23,6 +23,7 @@
   background-color: transparent;
   padding: var(--spacing-2);
   border-radius: var(--border-radius-sm);
+  color: var(--color-gray-300);
 }
 
 .icon-button:hover {
